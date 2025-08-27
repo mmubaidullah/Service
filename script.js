@@ -16,7 +16,8 @@
       { id: 's5', icon: '🚆', nameBn: 'রেলওয়ে হেল্পলাইন', nameEn: 'Railway Helpline', number: '996', category: 'Helpline' },
       { id: 's6', icon: '⚖️', nameBn: 'দুর্নীতি দমন কমিশন', nameEn: 'Anti-Corruption', number: '106', category: 'Helpline' },
       { id: 's7', icon: '👩‍👧', nameBn: 'নারী ও শিশু সহায়তা', nameEn: 'Women & Child', number: '109', category: 'Helpline' },
-      { id: 's8', icon: '📚', nameBn: 'তথ্যসেবা', nameEn: 'Gov Info Service', number: '333', category: 'Government' }
+      { id: 's8', icon: '📚', nameBn: 'তথ্যসেবা', nameEn: 'Gov Info Service', number: '333', category: 'Government' },
+      { id: 's9', icon: '🕌', nameBn: 'ইসলামী ফাউন্ডেশন', nameEn: 'islamic foundation', number: '333', category: 'Government' }
     ];
 
     // ======= DOM Refs =======
