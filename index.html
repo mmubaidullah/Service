@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Service Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="navwrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img style="width: 50px; height: 50px;" src="assets/logo.png" alt=""></div>
+        <div>
+          <div style="font-size:20px; color: #006747">Emergency Service</div>
+          <div style="font-size:20px; color: #006747">Directory</div>
+        </div>
+      </div>
+      <!-- <div class="status" aria-label="Status counters">
+        <div class="pill" title="Total Likes"><span class="dot">💗</span><span>Likes:</span> <span id="likeCount">0</span></div>
+        <div class="pill" title="Coin balance"><span class="dot">🪙</span><span>Coins:</span> <span id="coinCount">100</span></div>
+        <div class="pill" title="Copy count"><span class="dot">📋</span><span>Copies:</span> <span id="copyCount">0</span></div>
+      </div> -->
+
+      <div class="status" aria-label="Status counters">
+        <div class="pill" title="Total Likes"><span id="likeCount">0</span><span class="dot"><img style="width: 24px; height: 24px;" src="assets/heart.png" alt="Like"></span> </div>
+        <div class="pill" title="Coin balance"><span id="coinCount">100</span><span class="dot"><img style="width: 24px; height: 24px;" src="assets/coin.png" alt="Coins"></span> </div>
+        <div class="pill sobuj" title="Copy count"><span id="copyCount">0</span><span class="dot"></span><span>Copy</span></div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="crest" aria-hidden="true"><img style="width: 80px; height: 80px;" src="assets/logo.png" alt=""></div>
+      <div class="title">জরুরি সেবা ডিরেক্টরি</div>
+      <div class="slogan">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</div>
+    </div>
+  </section>
+
+  <!-- ================= MAIN ================= -->
+  <main class="wrap">
+    <div class="grid">
+      <!-- Cards grid -->
+      <div id="cards" class="cards" aria-live="polite"></div>
+
+      <!-- History panel -->
+      <aside class="history" aria-label="Call History">
+        <div class="history-head">
+          <div class="history-title"><span aria-hidden="true">🕘</span> <span>Call History</span></div>
+          <button id="clearHistory" class="clear" type="button">Clear</button>
+        </div>
+        <div id="historyList" class="history-list" role="list"></div>
+      </aside>
+    </div>
+    <div class="footnote">* Demo hotline numbers are used here for learning purposes.</div>
+  </main>
+
+  <!--
+  ==============================
+  README.md  (Save as README.md)
+  ==============================
+
+  # Project: Emergency Service Directory (Vanilla JS)
+
+  ## কী আছে এই প্রোজেক্টে
+  - Navbar: বামে লোগো + নাম, ডানে Likes, Coins (ডিফল্ট 100), Copies
+  - Hero: গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড, লোগো/শিরোনাম/স্লোগান
+  - Main: কার্ড সেকশন (কমপক্ষে ৬টি), ডানে Call History সেকশন
+  - Responsive: মোবাইলে কার্ড ১ কলাম, ট্যাবলেটে ২, বড় স্ক্রীনে ৩ কলাম + ডান পাশে হিস্ট্রি
+  - Functionality: ❤️ ক্লিক করলে লাইক কাউন্ট বাড়ে; 📞 কল করলে ২০ কয়েন কমে, এলার্টে নাম+নম্বর দেখায়, ইতিহাসে নাম/নম্বর/টাইম যুক্ত হয়; 📋 কপি করলে সংখ্যা ক্লিপবোর্ডে যায় এবং Copy কাউন্ট বাড়ে; Clear বাটনে ইতিহাস মুছে যায়।
+
+  ## কিভাবে রান করবেন
+  1) এই ফাইলটি `index.html` নামে সেভ করুন।
+  2) ব্রাউজারে ডাবল-ক্লিক করলেই ওপেন হবে।
+
+  ---
+
+  ## প্রশ্নোত্তর
+
+  ### 1) getElementById, getElementsByClassName, querySelector / querySelectorAll — পার্থক্য কী?
+  - **getElementById('id')**: একটিমাত্র এলিমেন্ট রিটার্ন করে (যার ঐ আইডি আছে)। লাইভ কালেকশন নয়, সরাসরি এলিমেন্ট। খুব দ্রুত।
+  - **getElementsByClassName('cls')**: *HTMLCollection* রিটার্ন করে যা লাইভ—DOM পরিবর্তন হলে তালিকাও পরিবর্তন হয়। ইনডেক্স দিয়ে আইটেম নিতে হয়।
+  - **querySelector(css)**: CSS সিলেক্টর দিয়ে **প্রথম** ম্যাচ হওয়া এলিমেন্ট দেয় (আইডি, ক্লাস, অ্যাট্রিবিউট যা-ই হোক)।
+  - **querySelectorAll(css)**: CSS সিলেক্টর দিয়ে **সব** ম্যাচের *NodeList* দেয় (স্ট্যাটিক—DOM বদলালে নিজে থেকে বদলায় না)।
+
+  ### 2) DOM-এ নতুন এলিমেন্ট তৈরি ও ইনসার্ট করবেন কীভাবে?
+  ```js
+  const li = document.createElement('li');    // ১) এলিমেন্ট তৈরি
+  li.textContent = 'Hello';                   // ২) কনটেন্ট/অ্যাট্রিবিউট সেট
+  document.querySelector('ul').appendChild(li); // ৩) প্যারেন্টে অ্যাড
+  ```
+  বিকল্প: `insertBefore(newNode, referenceNode)`, `prepend`, `before`, `after` ইত্যাদি মেথডও আছে।
+
+  ### 3) Event Bubbling কী, কীভাবে কাজ করে?
+  ইভেন্ট প্রথমে **ইনার** এলিমেন্টে ফায়ার হয়, তারপর ধাপে ধাপে **উপরের** প্যারেন্টদের দিকে ওঠে (bubble করে)। যেমন বাটনে ক্লিক করলে সেই বাটন → তার ডিভ → ডকুমেন্ট পর্যন্ত ইভেন্ট যায়।
+
+  ### 4) Event Delegation কী? কেন দরকার?
+  কোনো কন্টেইনারে **একটা** ইভেন্ট লিসেনার বসিয়ে, ভেতরের **অনেকগুলো** চাইল্ডের ইভেন্ট হ্যান্ডল করা—এটাই ডেলিগেশন।
+  - ডমে নতুন আইটেম যুক্ত/মুছলেও কাজ করে (কারণ লিসেনার প্যারেন্টে আছে)
+  - কম লিসেনার, কম মেমরি/পারফরম্যান্স ওভারহেড
+
+  ### 5) preventDefault() vs stopPropagation() — পার্থক্য
+  - **preventDefault()**: ব্রাউজারের ডিফল্ট আচরণ থামায় (যেমন ফর্ম সাবমিট, লিঙ্কে ন্যাভিগেশন)।
+  - **stopPropagation()**: ইভেন্টকে আর উপরের প্যারেন্টে যেতে দেয় না (bubbling/capturing থামায়)।
+
+  ---
+  -->
+</body>
+</html>
