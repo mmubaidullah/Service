@@ -34,8 +34,8 @@ a {
     background: #f8faf9; 
     color: #e2e8f0; 
     box-shadow: var(--shadow); 
-    width: 1920px;
-    height: 100px;
+    width: 100%;
+    min-height: 100px;
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
