@@ -92,7 +92,7 @@ a {
     font-size: 14px; 
 }
 .sobuj{
-        border-radius: 50px;
+    border-radius: 50px;
     background: rgba(0, 166, 62, 1);
 }
 .pill .dot { 
@@ -142,6 +142,7 @@ a {
 
 @media (min-width: 720px) {
     .cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
 }
 @media (min-width: 1024px) {
     .grid { grid-template-columns: 3fr 1.2fr; align-items: start; }
